@@ -35,7 +35,7 @@ export function AboutSection() {
               <div className="relative">
                 <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl scale-110" />
                 <Avatar className="w-48 h-48 md:w-64 md:h-64 border-4 border-primary/30 shadow-card relative">
-                  <AvatarImage src="foto-portfolio.JPG" alt="Gabriela Santos Pires da Costa" />
+                  <AvatarImage src="foto-portfolio.png" alt="Gabriela Santos Pires da Costa" />
                   <AvatarFallback className="text-4xl md:text-5xl font-serif bg-secondary text-primary">
                     GC
                   </AvatarFallback>
