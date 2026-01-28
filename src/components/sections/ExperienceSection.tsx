@@ -7,7 +7,7 @@ const experiences = [
   {
     company: 'Afya',
     role: 'Estagiária de Conteúdo',
-    period: 'Out/2024 - Atual',
+    period: 'Jun/2024 - Atual',
     location: 'Rio de Janeiro',
     description: 'Atuação na produção de conteúdo para o Portal Afya, com foco em saúde e educação médica.',
     responsibilities: [
@@ -21,7 +21,7 @@ const experiences = [
   {
     company: 'Fundação de Arte de Niterói',
     role: 'Estagiária de Assessoria de Imprensa',
-    period: 'Jun/2023 - Jun/2024',
+    period: 'Fev/2023 - Fev/2024',
     location: 'Niterói, RJ',
     description: 'Experiência em comunicação institucional no setor público, com foco em difusão cultural.',
     responsibilities: [
