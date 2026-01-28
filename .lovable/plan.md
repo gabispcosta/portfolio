@@ -34,7 +34,7 @@ Uma landing page elegante e profissional com paleta rosé e bege, tipografia sof
 
 #### **2. Sobre Mim**
 - Foto profissional circular com borda suave rosé (espaço para upload)
-- Texto apresentando a Gabriela: estudante de Jornalismo na UFF (6º período), experiência em redação digital, assessoria de imprensa e produção de conteúdo
+- Texto apresentando a Gabriela: estudante de Jornalismo na UFF (8º período), experiência em redação digital, assessoria de imprensa e produção de conteúdo
 - Destaque para fluência em inglês e experiência internacional
 - Card com informações rápidas: localização, formação, disponibilidade
 

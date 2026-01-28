@@ -5,9 +5,9 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const quickInfo = [
   { icon: MapPin, label: 'Localização', value: 'Niterói, RJ' },
-  { icon: GraduationCap, label: 'Formação', value: 'Jornalismo - UFF (6º período)' },
+  { icon: GraduationCap, label: 'Formação', value: 'Jornalismo - UFF (8º período)' },
   { icon: Briefcase, label: 'Disponibilidade', value: 'Estágio / CLT' },
-  { icon: Globe, label: 'Idiomas', value: 'Inglês Fluente' },
+  { icon: Globe, label: 'Idiomas', value: 'Inglês Fluente e Espanhol Avançado' },
 ];
 
 export function AboutSection() {
@@ -47,7 +47,7 @@ export function AboutSection() {
             <div className="lg:col-span-3 space-y-6">
               <p className="text-lg text-foreground leading-relaxed">
                 Sou estudante de <strong className="text-primary">Jornalismo na Universidade Federal Fluminense</strong>, 
-                atualmente no 6º período. Minha trajetória inclui experiências em assessoria de imprensa, 
+                atualmente no 8º período. Minha trajetória inclui experiências em assessoria de imprensa, 
                 produção de conteúdo digital e redação jornalística.
               </p>
               <p className="text-muted-foreground leading-relaxed">

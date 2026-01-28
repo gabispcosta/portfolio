@@ -82,13 +82,6 @@ export function SkillsSection() {
                   <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                     {skill.description}
                   </p>
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-xs">
-                      <span className="text-muted-foreground">Proficiência</span>
-                      <span className="text-primary font-medium">{skill.level}%</span>
-                    </div>
-                    <Progress value={isVisible ? skill.level : 0} className="h-2" />
-                  </div>
                 </CardContent>
               </Card>
             ))}

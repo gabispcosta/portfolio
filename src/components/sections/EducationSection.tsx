@@ -8,12 +8,12 @@ const education = {
     title: 'Bacharelado em Jornalismo',
     institution: 'Universidade Federal Fluminense (UFF)',
     period: '2022 - Atual',
-    status: '6º Período',
+    status: '8º Período',
   },
   research: {
     title: 'A imprensa carioca nas margens',
     type: 'Iniciação Científica - FAPERJ',
-    description: 'Pesquisa sobre a cobertura jornalística de comunidades periféricas no Rio de Janeiro.',
+    description: 'Pesquisa sobre o jornal "Cidade do Rio" no final do século XIX.',
   },
   extension: {
     title: 'Projeto Manchetempo',
@@ -23,6 +23,16 @@ const education = {
 };
 
 const courses = [
+  {
+    title: 'Curso de Investigação Digital (OSINT)',
+    institution: 'Academia LUPA',
+    year: '2025',
+  },
+  {
+    title: 'COP30 em Pauta',
+    institution: 'ABRAJI',
+    year: '2025',
+  },
   {
     title: 'Jornalismo Humanitário',
     institution: 'ACNUR / PUC Minas',
