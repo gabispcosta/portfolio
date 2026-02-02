@@ -50,7 +50,7 @@ export function ContactSection() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-10">
+          <div>
             {/* Contact info */}
             <div className={`lg:col-span-2 space-y-6 transition-all duration-700 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -113,7 +113,7 @@ export function ContactSection() {
             </div>
 
             {/* Contact form */}
-            <div className={`lg:col-span-3 transition-all duration-700 ${
+            {/* <div className={`lg:col-span-3 transition-all duration-700 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`} style={{ transitionDelay: '0.4s' }}>
               <Card className="bg-card/80 backdrop-blur-sm border-border/50">
@@ -184,7 +184,7 @@ export function ContactSection() {
                   </form>
                 </CardContent>
               </Card>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

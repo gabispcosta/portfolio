@@ -12,7 +12,12 @@ const portfolioItems = [
     description: 'Artigos sobre saúde, medicina e educação médica publicados no portal da Afya.',
     icon: Newspaper,
     tags: ['SEO', 'Saúde', 'WordPress'],
-    link: '#',
+    links: [
+      { name: 'Ler Artigo 1', url: 'https://portal.afya.com.br/saude/videos-de-deepfake-propagam-fake-news-atraves-de-medicos-criados-por-ia' },
+      { name: 'Ler Artigo 2', url: 'https://portal.afya.com.br/oncologia/estudo-estima-que-mortes-por-cancer-devem-crescer-em-75-ate-2050' },
+      { name: 'Ler Artigo 3', url: 'https://portal.afya.com.br/pediatria/impactos-do-castigo-fisico-na-saude-de-criancas-e-adolescentes' },
+      { name: 'Ler Artigo 4', url: 'https://portal.afya.com.br/psiquiatria/terapia-e-ia-o-que-faz-o-usuario-buscar-apoio-psicologico-nos-chatbots' }
+    ],
     featured: true,
   },
   {
@@ -22,7 +27,7 @@ const portfolioItems = [
     description: 'Reportagens e conteúdo jornalístico produzido para o projeto de extensão da UFF.',
     icon: FileText,
     tags: ['Jornalismo', 'Atualidades'],
-    link: '#',
+    links: [],
     featured: true,
   },
   {
@@ -32,7 +37,8 @@ const portfolioItems = [
     description: 'Releases e coberturas de eventos culturais da Fundação de Arte de Niterói.',
     icon: Radio,
     tags: ['Eventos', 'Cultura', 'Releases'],
-    link: '#',
+    links: [
+    ],
     featured: false,
   },
   {
@@ -42,9 +48,22 @@ const portfolioItems = [
     description: 'Pesquisa sobre representação de comunidades periféricas na mídia carioca.',
     icon: FileText,
     tags: ['Pesquisa', 'FAPERJ'],
-    link: '#',
+    links: [],
     featured: false,
   },
+  {
+    id: 5, // Fixed duplicate ID (was 4)
+    title: 'Trabalhos do curso de Jornalismo',
+    category: 'Pesquisa Acadêmica',
+    description: 'Trabalhos realizados ao longo da graduação em Jornalismo na UFF.',
+    icon: FileText,
+    tags: ['Pesquisa', 'Jornalismo'],
+    links: [
+      { name: 'Acessar Drive', url: 'https://drive.google.com/drive/folders/15IsK62Ws13h92I9d6SZDBLWQlhq2Scko' },
+      // { name: 'Ver LinkedIn', url: '#' } 
+    ],
+    featured: true,
+  }
 ];
 
 export function PortfolioSection() {
@@ -70,18 +89,19 @@ export function PortfolioSection() {
             {portfolioItems.map((item, index) => (
               <Card
                 key={item.id}
-                className={`group hover-lift overflow-hidden bg-card/80 backdrop-blur-sm border-border/50 transition-all duration-700 ${
+                // FIX 1: Changed 'group' to 'group/card' to isolate Card hover effects
+                className={`group/card hover-lift overflow-hidden bg-card/80 backdrop-blur-sm border-border/50 transition-all duration-700 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 } ${item.featured ? 'md:row-span-1' : ''}`}
                 style={{ transitionDelay: `${0.1 + index * 0.1}s` }}
               >
-                {/* Decorative gradient */}
                 <div className="h-2 bg-gradient-to-r from-primary/60 via-accent to-primary/60" />
                 
                 <CardHeader className="pb-2">
                   <div className="flex items-start justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                      {/* FIX 2: Updated to 'group-hover/card' so this only reacts to the CARD being hovered */}
+                      <div className="p-3 rounded-xl bg-primary/10 group-hover/card:bg-primary/20 transition-colors">
                         <item.icon className="h-6 w-6 text-primary" />
                       </div>
                       <div>
@@ -109,23 +129,36 @@ export function PortfolioSection() {
                     ))}
                   </div>
                   
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="group/btn text-primary hover:text-primary hover:bg-primary/10 p-0"
-                    asChild
-                  >
-                    <a href={item.link} className="flex items-center gap-2">
-                      Ver mais
-                      <ExternalLink className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </a>
-                  </Button>
+                  {item.links && item.links.length > 0 && (
+                    <div className="flex flex-wrap gap-3 pt-2">
+                      {item.links.map((linkItem, i) => (
+                        <Button
+                          key={i}
+                          variant="ghost"
+                          size="sm"
+                          // FIX 3: Explicitly named this 'group/btn'
+                          className="group/btn text-primary hover:text-primary hover:bg-primary/10 p-0 h-auto font-medium"
+                          asChild
+                        >
+                          <a 
+                            href={linkItem.url} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="flex items-center gap-2"
+                          >
+                            {linkItem.name}
+                            {/* FIX 4: Updated to 'group-hover/btn' so it ONLY reacts to this specific BUTTON */}
+                            <ExternalLink className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                          </a>
+                        </Button>
+                      ))}
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          {/* Note about more works */}
           <div className={`mt-12 text-center transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`} style={{ transitionDelay: '0.6s' }}>
